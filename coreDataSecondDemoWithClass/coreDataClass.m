@@ -12,9 +12,12 @@
 #import <UIKit/UIKit.h>
 
 
-@implementation coreDataClass
+@implementation coreDataClass{
+    
+}
 
 -(void)callMethod:(UITextField *)tf1 andtextFieldf2ForNAme:(UITextField *)tf2{
+    
     
     NSLog(@"you are in call method");
     AppDelegate *appdelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
@@ -32,12 +35,21 @@
     NSLog(@"%@",errorObj.localizedDescription);
     fetReqObj=[[NSFetchRequest alloc]initWithEntityName:@"Student"];
     arrObj=[managedObjectContext executeFetchRequest:fetReqObj error:&errorObj];
+
     NSLog(@"%lu ________   %@",(unsigned long)arrObj.count,arrObj);
+    
     for (int i=0; i<[arrObj count]; i++) {
         objeModelTemp=[arrObj objectAtIndex:i];
         NSLog(@"%@",[objeModelTemp valueForKey:@"id"]);
         NSLog(@"%@",[objeModelTemp valueForKey:@"name"]);
+        strx=[objeModelTemp valueForKey:@"name"];
+        NSLog(@"____STring value is %@ ",strx);
+        [_mutArr addObject:strx];
+        strx=NULL;
+        
     }
+    NSLog(@"___VALue of array is %lu ___",(unsigned long)_mutArr.count
+          );
 }
 
 //-(void)showMethod{

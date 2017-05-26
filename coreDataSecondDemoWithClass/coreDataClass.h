@@ -18,7 +18,10 @@
     NSManagedObject *manObj;
     NSManagedObject *objeModelTemp;
     NSManagedObjectContext *managedObjectContext;
+    NSMutableString *strx;
 }
+@property(nonatomic)NSMutableArray *mutArr;
+
 
 -(void)callMethod:(UITextField *)tf1 andtextFieldf2ForNAme:(UITextField *)tf2;
 
