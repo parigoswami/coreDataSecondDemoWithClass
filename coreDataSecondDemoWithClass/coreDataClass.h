@@ -18,7 +18,7 @@
     NSManagedObject *manObj;
     NSManagedObject *objeModelTemp;
     NSManagedObjectContext *managedObjectContext;
-    NSMutableString *strx;
+    NSString *strx;
 }
 @property(nonatomic)NSMutableArray *mutArr;
 

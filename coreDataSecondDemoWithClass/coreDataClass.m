@@ -37,19 +37,19 @@
     arrObj=[managedObjectContext executeFetchRequest:fetReqObj error:&errorObj];
 
     NSLog(@"%lu ________   %@",(unsigned long)arrObj.count,arrObj);
+    _mutArr=[[NSMutableArray alloc]init];
+    strx=[[NSString alloc]init];
     
     for (int i=0; i<[arrObj count]; i++) {
         objeModelTemp=[arrObj objectAtIndex:i];
         NSLog(@"%@",[objeModelTemp valueForKey:@"id"]);
         NSLog(@"%@",[objeModelTemp valueForKey:@"name"]);
-        strx=[objeModelTemp valueForKey:@"name"];
+        strx=[NSString stringWithFormat:@"%@",[objeModelTemp valueForKey:@"id"]];
         NSLog(@"____STring value is %@ ",strx);
         [_mutArr addObject:strx];
         strx=NULL;
-        
+        NSLog(@"___array at index %d is ______%@_____",i,[_mutArr objectAtIndex:i]);
     }
-    NSLog(@"___VALue of array is %lu ___",(unsigned long)_mutArr.count
-          );
 }
 
 //-(void)showMethod{
